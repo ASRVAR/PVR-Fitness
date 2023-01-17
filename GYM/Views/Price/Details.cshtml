@@ -1,0 +1,127 @@
+﻿@model GYM.Models.Price
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+
+<div class="content-wrapper">
+    <!-- Container-fluid starts -->
+    <div class="container-fluid">
+        <!-- Header Starts -->
+        <div class="row">
+            <div class="col-sm-12 p-0">
+                <div class="main-header">
+                    <h4>Fitnesh Price List</h4>
+                    <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                        <li class="breadcrumb-item">
+                            <a href="#">
+                                <i class="icofont icofont-home"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Price List</a>
+                        </li>
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- Header end -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                            <h5 class="card-header-text">Price Details</h5>
+                        </div>
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-sm-12 table-responsive">
+                                <table class="table table-inverse">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Heading)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Mony)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.TrainerNumber)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Services)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Courses)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Massages)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Aerobics)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.CreateDate)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.ModifiedDate)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.IsActive)
+                                            </th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(model => model.Heading)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => model.Mony)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => model.TrainerNumber)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => model.Services)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => model.Courses)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => model.Massages)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => model.Aerobics)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => model.CreateDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => model.ModifiedDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(model => model.IsActive)
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <div>
+                                    <input type="hidden" asp-for="Id" />
+                                    @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>*@
+                                    <a asp-action="Index">Back to List</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

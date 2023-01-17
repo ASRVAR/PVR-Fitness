@@ -1,0 +1,161 @@
+﻿@model List<GYM.Models.Blog>
+@{
+    ViewData["Title"] = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- =========================
+    BLOG HEADER SECTION
+============================== -->
+<section id="blog-header" class="parallax-section">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-offset-2 col-md-8 col-sm-12">
+                <h3 class="wow bounceIn" data-wow-delay="0.9s">Fitness Blog</h3>
+                <h1 class="wow fadeInUp" data-wow-delay="1.6s">Professional Club</h1>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+    BLOG SECTION
+============================== -->
+<section id="blog" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-7">
+                @foreach (var item in Model)
+                {
+                <div class="blog-content wow fadeInUp" data-wow-delay="1s">
+                    <h3>@item.BlogTitle </h3>
+                    <span class="meta-date"><a href="#">@item.CreateDate</a></span>
+                    <span class="meta-comments"><a href="#blog-comments">10 comments</a></span>
+                    <span class="meta-author"><a href="#blog-author">@item.WritterName</a></span>
+                    <div class="blog-clear"></div>
+
+                    <div class="blog-image wow fadeInUp" data-wow-delay="0.9s">
+                        <img src="~/BlogImages/@item.BlogPhoto" class="img-responsive" alt="blog" />
+                    </div>
+
+                    <blockquote>
+                        @item.PhotoTitle
+                    </blockquote>
+                    <p>@item.Description</p>
+                </div>
+
+                }
+
+                <div class="blog-author wow fadeInUp" data-wow-delay="1s">
+                    <div class="media">
+                        <div class="media-object pull-left">
+                            <a href="#"><img src="../images/blog-author.jpg" class="img-responsive img-circle" alt="blog"></a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Michael Dan</h4>
+                            <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-comment wow fadeInUp" data-wow-delay="1s">
+                    <h3>2 comments</h3>
+                    <div class="media">
+                        <div class="media-object pull-left">
+                            <img src="../images/comment1.jpg" class="img-responsive img-circle" alt="blog">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Sandar Minn</h4>
+                            <h5>18 May 2016</h5>
+                            <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur.</p>
+                            <div class="media">
+                                <div class="media-object pull-left">
+                                    <img src="../images/comment2.jpg" class="img-responsive img-circle" alt="blog">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">George Linn</h4>
+                                    <h5>14 May 2016</h5>
+                                    <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-comment-form wow fadeInUp" data-wow-delay="1s">
+                    <h3>Leave a comment</h3>
+                    <form action="#" method="post" id="comment-form">
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" class="form-control" placeholder="Name" name="name" required>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="email" class="form-control" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <textarea class="form-control" placeholder="Message" rows="5" name"message" required id="message"></textarea>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <input name="submit" type="submit" class="form-control" id="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="col-md-4 col-sm-5 wow fadeInUp" data-wow-delay="1.3s">
+
+                <div class="blog-categories">
+                    <h3>Categories</h3>
+                    <li><a href="#">Body Fitness</a></li>
+                    <li><a href="#">Get Online Tips</a></li>
+                    <li><a href="#">Aerobic Exercises</a></li>
+                    <li><a href="#">Yoga Courses</a></li>
+                    <li><a href="#">General Health</a></li>
+                    <li><a href="#">Fit and Lift</a></li>
+                </div>
+
+                <div class="recent-post">
+                    <h3>Recent Posts</h3>
+                    @foreach (var item in Model)
+                    {
+                        <div class="media">
+                            <div class="media-object pull-left">
+                                <a href="#"><img src="../images/blog-thumb1.jpg" class="img-responsive" alt="blog"></a>
+                            </div>
+                            <div class="media-body">
+                                <h5>18 Jan 2022</h5>
+                                <h4 class="media-heading"><a href="#">@item.BlogTitle</a></h4>
+                            </div>
+                        </div>
+                    }
+                        <div class="media">
+                <div class="media-object pull-left">
+                    <a href="#"><img src="../images/blog-thumb2.jpg" class="img-responsive" alt="blog"></a>
+                </div>
+                <div class="media-body">
+                    <h5>14 May 2016</h5>
+                    <h4 class="media-heading"><a href="#">Explore Gym Services</a></h4>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-object pull-left">
+                    <a href="#"><img src="../images/blog-thumb3.jpg" class="img-responsive" alt="blog"></a>
+                </div>
+                <div class="media-body">
+                    <h5>10 May 2016</h5>
+                    <h4 class="media-heading"><a href="#">How to practice Aerobics?</a></h4>
+                </div>
+            </div>
+                    </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+

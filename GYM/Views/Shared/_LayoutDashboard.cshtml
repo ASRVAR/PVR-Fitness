@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="~/blogCSS/assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="~/blogCSS/assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+
+    <!-- themify -->
+    <link rel="stylesheet" type="text/css" href="~/blogCSS/assets/icon/themify-icons/themify-icons.css">
+
+    <!-- iconfont -->
+    <link rel="stylesheet" type="text/css" href="~/blogCSS/assets/icon/icofont/css/icofont.css">
+
+    <!-- simple line icon -->
+    <link rel="stylesheet" type="text/css" href="~/blogCSS/assets/icon/simple-line-icons/css/simple-line-icons.css">
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="~/blogCSS/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Chartlist chart css -->
+    <link rel="stylesheet" href="~/blogCSS/assets/plugins/chartist/dist/chartist.css" type="text/css" media="all">
+
+    <!-- Weather css -->
+    <link href="~/blogCSS/assets/css/svg-weather.css" rel="stylesheet">
+
+
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="~/blogCSS/assets/css/main.css">
+
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="~/blogCSS/assets/css/responsive.css">
+
+</head>
+<body>
+    <div>
+        <div class="loader-bg">
+            <div class="loader-bar">
+            </div>
+        </div>
+        <div class="wrapper">
+            <!-- Navbar-->
+            <header class="main-header-top hidden-print">
+                <a href="index.html" class="logo"><h4 class="img-fluid able-logo">FITNESS </h4></a>
+                <nav class="navbar navbar-static-top">
+                    <!-- Sidebar toggle button-->
+                    <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
+
+                 
+                    <!-- Navbar Right Menu-->
+                    <div class="navbar-custom-menu f-right">
+                      
+
+                        <ul class="top-nav">
+                          
+                            <!-- window screen -->
+                            <li class="pc-rheader-submenu">
+                                <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
+                                    <i class="icon-size-fullscreen"></i>
+                                </a>
+
+                            </li>
+                            <!-- User Menu-->
+                            <li class="dropdown">
+                                <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
+                                    <span><img class="img-circle " src="/images/trainer-img1.jpg" style="width:40px;" alt="User Image"></span>
+                                    <span>Pawan<b> Singh</b> <i class=" icofont icofont-simple-down"></i></span>
+
+                                </a>
+                                <ul class="dropdown-menu settings-menu">
+                                    <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
+                                    <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+                                    <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li>
+                                    <li class="p-0">
+                                        <div class="dropdown-divider m-0"></div>
+                                    </li>
+                                    <li><a href="#"><i class="icon-lock"></i> Lock Screen</a></li>
+                                    <li><a href="login1.html"><i class="icon-logout"></i> Logout</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                </nav>
+            </header>
+            <!-- Side-Nav-->
+            <aside class="main-sidebar hidden-print ">
+                <section class="sidebar" id="sidebar-scroll">
+                    <!-- Sidebar Menu-->
+                    <ul class="sidebar-menu">
+                        <li class="nav-level">--- Navigation</li>
+                        <li class="active treeview">
+                            <a class="waves-effect waves-dark" href="index.html">
+                                <i class="icon-speedometer"></i><span> Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-level">--- Components</li>
+                        <li class="treeview">
+                            <a class="waves-effect waves-dark" href="#!"><i class="icon-chart"></i><span>Price Set</span><span class="label label-success menu-caption">New</span><i class="icon-arrow-down"></i></a>
+                            <ul class="treeview-menu">
+                                <li> <a asp-action="Index" asp-controller="Price">View Price</a></li>
+                                @*<li><a class="waves-effect waves-dark" href="morris-chart.html"><i class="icon-arrow-right"></i> Morris Charts</a></li>*@
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a class="waves-effect waves-dark" href="#!"><i class="icon-briefcase"></i><span> Banner Slider</span><i class="icon-arrow-down"></i></a>
+                            <ul class="treeview-menu">
+                                <li>
+                                    <a asp-action="Index" asp-controller="Banner">View Banner</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a class="waves-effect waves-dark" href="#!"><i class="icon-user-follow"></i><span> About Fitness</span><i class="icon-arrow-down"></i></a>
+                            <ul class="treeview-menu">
+                                <li>
+                                    <a asp-action="Index" asp-controller="About">View About</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a class="waves-effect waves-dark" href="#!"><i class="icon-user-female"></i><span> Trainers Fitness</span><i class="icon-arrow-down"></i></a>
+                            <ul class="treeview-menu">
+                                <li>
+                                    <a asp-action="Index" asp-controller="Trainers">View Trainers</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a class="waves-effect waves-dark" href="#!"><i class="icon-book-open"></i><span> Blog Fitness</span><i class="icon-arrow-down"></i></a>
+                            <ul class="treeview-menu">
+                                <li>
+                                    <a asp-action="Index" asp-controller="Blog">View Blog</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a class="waves-effect waves-dark" href="#!"><i class="icon-list-demo"></i><span> Signup Fitness </span><i class="icon-arrow-down"></i></a>
+                            <ul class="treeview-menu">
+                                <li>
+                                    <a asp-action="Index" asp-controller="SignUpView">Show Details</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </aside>
+            @RenderBody()
+        </div>
+    </div>
+</body>
+
+<!-- Required Jqurey -->
+<script src="~/blogCSS/assets/plugins/Jquery/dist/jquery.min.js"></script>
+<script src="~/blogCSS/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="~/blogCSS/assets/plugins/tether/dist/js/tether.min.js"></script>
+
+<!-- Required Fremwork -->
+<script src="~/blogCSS/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Scrollbar JS-->
+<script src="~/blogCSS/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="~/blogCSS/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+
+<!--classic JS-->
+<script src="~/blogCSS/assets/plugins/classie/classie.js"></script>
+
+<!-- notification -->
+<script src="~/blogCSS/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+
+<!-- Sparkline charts -->
+<script src="~/blogCSS/assets/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
+
+<!-- Counter js  -->
+<script src="~/blogCSS/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+<script src="~/blogCSS/assets/plugins/countdown/js/jquery.counterup.js"></script>
+
+<!-- Echart js -->
+<script src="~/blogCSS/assets/plugins/charts/echarts/js/echarts-all.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+
+<!-- custom js -->
+<script type="text/javascript" src="~/blogCSS/assets/js/main.min.js"></script>
+<script type="text/javascript" src="~/blogCSS/assets/pages/dashboard.js"></script>
+<script type="text/javascript" src="~/blogCSS/assets/pages/elements.js"></script>
+<script src="~/blogCSS/assets/js/menu.min.js"></script>
+
+<script>
+    var $window = $(window);
+    var nav = $('.fixed-button');
+    $window.scroll(function () {
+        if ($window.scrollTop() >= 200) {
+            nav.addClass('active');
+        }
+        else {
+            nav.removeClass('active');
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,132 @@
+﻿@model IEnumerable<GYM.Models.Price>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Container-fluid starts -->
+    <div class="container-fluid">
+        <!-- Header Starts -->
+        <div class="row">
+            <div class="col-sm-12 p-0">
+                <div class="main-header">
+                    <h4>Fitnesh Price List</h4>
+                    <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                        <li class="breadcrumb-item">
+                            <a href="#">
+                                <i class="icofont icofont-home"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Price List</a>
+                        </li>
+                        
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- Header end -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    @*<div class="card-header">
+            <h5 class="card-header-text">Price List</h5>
+
+        </div>*@
+                 
+                    <div class="card-block">
+                        <p>
+                            <a asp-action="Create" class="btn btn-success">Create New</a>
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-12 table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Heading)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Mony)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.TrainerNumber)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Services)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Courses)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Massages)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Aerobics)
+                                            </th>
+                                            @*<th>
+                                    @Html.DisplayNameFor(model => model.CreateDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ModifiedDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IsActive)
+                                </th>*@
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Heading)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Mony)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TrainerNumber)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Services)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Courses)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Massages)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Aerobics)
+                                                </td>
+                                                @*<td>
+                                        @Html.DisplayFor(modelItem => item.CreateDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ModifiedDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IsActive)
+                                    </td>*@
+                                                <td>
+                                                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>

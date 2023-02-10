@@ -1,4 +1,5 @@
 using GYM.DataModel;
+using GYM.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,9 @@ namespace GYM
             services.AddControllersWithViews();
             services.AddDbContext<dataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().AddRazorRuntimeCompilation();
+            services.AddScoped<ILogin, AuthenticateLogin>();
+
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

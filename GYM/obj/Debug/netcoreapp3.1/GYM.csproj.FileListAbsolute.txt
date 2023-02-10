@@ -456,3 +456,4 @@ D:\PRACTICE PROJECT\GYM\GYM\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbs
 D:\PRACTICE PROJECT\GYM\GYM\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 D:\PRACTICE PROJECT\GYM\GYM\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 D:\PRACTICE PROJECT\GYM\GYM\obj\Debug\netcoreapp3.1\Razor\Views\Home\Blog.cshtml.g.cs
+D:\PRACTICE PROJECT\GYM\GYM\obj\Debug\netcoreapp3.1\Razor\Views\Auth\Index.cshtml.g.cs

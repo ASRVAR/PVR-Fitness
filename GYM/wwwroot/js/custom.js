@@ -5,7 +5,6 @@ $(window).load(function(){
     $('.preloader').fadeOut(1000); // set duration in brackets    
 });
 
-
 /* HTML document is loaded. DOM is ready. 
 -------------------------------------------*/
 $(document).ready(function() {
@@ -24,7 +23,7 @@ $(document).ready(function() {
     $(window).scroll(function () {
         mainNav();
     });
-
+       
     function mainNav() {
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
         if (top > 40) $('.sticky-navigation').stop().animate({
@@ -36,15 +35,12 @@ $(document).ready(function() {
             "top": '-75'
         });
     }
-    
-
+   
    /* Hide mobile menu after clicking on a link
     -----------------------------------------------*/
     $('.navbar-collapse a').click(function(){
         $(".navbar-collapse").collapse('hide');
     });
-
-
   /*  smoothscroll
   ----------------------------------------------*/
    $(function() {
@@ -56,8 +52,6 @@ $(document).ready(function() {
             event.preventDefault();
         });
     });
-
-
  /* Parallax section
     -----------------------------------------------*/
   function initParallax() {
@@ -68,7 +62,6 @@ $(document).ready(function() {
     $('#blog').parallax("100%", 0.1);
     $('#price').parallax("100%", 0.2);
     $('#testimonial').parallax("100%", 0.2);
-
   }
   initParallax();
 

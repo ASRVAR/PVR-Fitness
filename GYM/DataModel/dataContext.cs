@@ -20,6 +20,14 @@ namespace GYM.DataModel
         public DbSet<Signup> Signup { get; set; }
         public DbSet<Testimonial> Testimonial { get; set; }
         public DbSet<Trainers> Trainers { get; set; }
+        public DbSet<LoginAuth> LoginAuth { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<LoginAuth>(entity => {
+                entity.HasKey(k => k.id);
+            });
+        }
     }
 
 }
